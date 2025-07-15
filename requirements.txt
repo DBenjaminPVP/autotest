@@ -1,0 +1,13 @@
+# requirements.txt
+
+# For End-to-End (E2E) testing
+playwright
+
+# The test runner for our E2E tests
+pytest
+
+# Plugin to allow pytest to run async tests (for Playwright)
+pytest-asyncio
+
+# For Performance testing
+locust
