@@ -6,9 +6,11 @@ This is a portfolio used to display automated testing cases.
 
 Benjamin Defays
 
-## Stack 
+## Important points 
 
 * All tests will use Python
+
+* Tests with Playwright need to use async
 
 * Automated tests will use Playwright
 
