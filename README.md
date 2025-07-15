@@ -16,6 +16,8 @@ Benjamin Defays
 
 * Performance tests will use Locust
 
+* To limit time consuming error, type checking is set at strict and can be changed in the settings by searching for python.analysis.typeCheckingMode 
+
 ### websites
 
 * Most of the tests will be based on the test website `https://www.saucedemo.com/` for now

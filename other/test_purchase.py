@@ -1,5 +1,5 @@
 import pytest
-from playwright.sync_api import Page, expect, Locator
+from playwright.sync_api import Page, Locator
 
 @pytest.mark.browserstack
 def test_item_purchase(page:Page):

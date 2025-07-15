@@ -1,6 +1,6 @@
 import os
 import pytest
-from playwright.async_api import async_playwright
+from playwright.async_api import async_playwright, Page
 import asyncio
 
 @pytest.mark.signin
@@ -14,14 +14,14 @@ async def test_setup():
     4. Handle the 2FA TOTP code.
     5. Save the authentication state to 'auth.json'.
     """
-    with async_playwright() as p:
+    async with async_playwright() as p:
         # Launch a persistent context to save the state
         context = await p.chromium.launch_persistent_context(
             user_data_dir="user_data",
             headless=False,  # Run in headed mode to see what's happening
             args=["--disable-blink-features=AutomationControlled"] # Helps to avoid detection by Google
         )
-        page = await context.new_page()
+        page:Page = await context.new_page()
 
         try:
             # Go to your target page that requires login
@@ -32,7 +32,7 @@ async def test_setup():
             # A new popup window for Google login should appear
             async with page.expect_popup() as popup_info:
                 await page.get_by_role("button", name='Sign in with Google').click()
-            popup_page = popup_info.value
+            popup_page:Page = await popup_info.value
 
             # Fill in the email
             await popup_page.get_by_label('Email or phone').fill(os.environ['GOOGLE_USER'])
