@@ -25,5 +25,9 @@ playwright install
 
 echo ""
 echo "✅ Setup complete!"
-echo "-> To activate the virtual environment in your terminal, run:"
+echo "If you are not using VSCODE, activate the virtual environment in your terminal by running:"
 echo "-> source venv/bin/activate"
+echo "If you are using VSCODE, open the Command Palette:"
+echo "-> Cmd + Shift + P"
+echo "Type Python: Select Interpreter and select it"
+echo "Click on the one inside the project: ./venv/bin/python"

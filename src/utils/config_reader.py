@@ -1,7 +1,7 @@
 import configparser
 
 ## this class is a singleton to not read the config file all the time
-class configReader():
+class ConfigReader():
     
     _instance = None
 
@@ -18,30 +18,32 @@ class configReader():
     
     ## getter for the users and password values
     def get_standard_user(self) -> str:
-       return self.config['USERS']['standard']
+       return self.config['users']['standard']
     
     def get_locked_user(self) -> str:
-       return self.config['USERS']['locked']
+       return self.config['users']['locked']
     
     def get_problem_user(self) -> str:
-       return self.config['USERS']['problem']
+       return self.config['users']['problem']
     
     def get_badperf_user(self) -> str:
-       return self.config['USERS']['bad_perf']
+       return self.config['users']['bad_perf']
     
     def get_visual_user(self) -> str:
-       return self.config['USERS']['visual']
+       return self.config['users']['visual']
     
     def get_password(self) -> str:
-       return self.config['USERS']['secret_sauce']
+       return self.config['users']['password']
     
     #getter for the timeout values
     def get_url_timeout(self) -> int:
-        return int(self.config['TIMEOUT']['wait_url_timeout'])
+        return int(self.config['timeout']['wait_url_timeout'])
     
     #getter for the urls
     def get_website_url(self) -> str:
-       return self.config['URL']['saucedemo_url']
+       return self.config['url']['saucedemo_url']
+    def get_inventory_url(self) -> str:
+       return self.config['url']['inventory_url']
     
     
  
