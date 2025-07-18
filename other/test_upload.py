@@ -11,8 +11,8 @@ async def test_upload():
         context:BrowserContext = await browser.new_context(storage_state="auth.json")
         try:
                 page:Page = await context.new_page()
-                await page.goto('https://fan-project-staging.firebaseapp.com/cloudflare/', timeout=60000)
-                with page.expect_popup():
+                await page.goto('', timeout=60000)
+                async with page.expect_popup():
                         await page.get_by_role("button", name='Sign in with Google').click()
                 await expect(page.locator("//article[@class='show-unauth']").get_by_text("Video Upload Dashboard",exact=True)).to_be_visible()
                 await page.locator("//input[@id='fileInput']").set_input_files(files='/Users/benjamindefays/Downloads/test.mp4')

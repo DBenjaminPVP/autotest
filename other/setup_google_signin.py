@@ -25,7 +25,7 @@ async def test_setup():
 
         try:
             # Go to your target page that requires login
-            await page.goto('https://fan-project-staging.firebaseapp.com/cloudflare/', timeout=60000)
+            await page.goto('', timeout=60000)
 
             # --- Google Login Flow ---
             # Click the 'Sign in with Google' button
