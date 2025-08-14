@@ -20,9 +20,21 @@ Benjamin Defays
 
 ### websites
 
-* Most of the tests will be based on the test website `https://www.saucedemo.com/` for now
+* Most of the tests will be based on the test website `https://www.saucedemo.com/`
 
-## to begin (only need to be done once)
+## Installation
+
+### To begin (only need to be done once)
 1. Open your terminal, navigate to the project directory, and run this command to give the script permission to execute `chmod +x setup.sh`
-2. Execute the script by running `./setup.sh`
-3. activate the virtual environment in your terminal each time you open a new session by running `source venv/bin/activate`
+2. Execute the script by running `./setup.sh` and follow the steps provided at the end of the script
+3. Install Docker on your computer by following the steps in `https://www.docker.com/get-started/`
+4. Launch Docker Desktop
+
+### To build the Docker image 
+Run the command `docker build -t autotest .`
+
+### To start the Docker container 
+Run the command `docker run -it --rm autotest`
+
+### To run the tests without Docker 
+Run the command `pytest -m [markdown wanted like training]` 
