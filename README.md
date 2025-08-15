@@ -23,24 +23,24 @@ Run the command `docker build -t autotest .`
 
 ### To start the Docker container 
 Run the command `docker run -it --rm --init --ipc=host autotest`
-This command is based on the good practices mentioned in `https://playwright.dev/docs/docker#recommended-docker-configuration`. Please refer to it when needed.
+This command is based on the good practices mentioned in `https://playwright.dev/docs/docker#recommended-docker-configuration`.
 
 ### To run the tests without Docker 
 Run the command `pytest -m [markdown wanted like training]` 
 
 ### When pushing
-Each push to the main branch starts the github action provided in the `automated_test.yml` file. This file run all the automated tests associated with the training mark  
+Each push to the main branch starts the github action provided in the `automated_test.yml` file. This file run all the automated tests associated with the training tag.  
 
 ## Notes concerning the project 
 
-* All tests will use Python
+* All tests will use Python.
 
-* Automated tests will use Playwright
+* Automated tests will use Playwright.
 
-* Performance tests will use Locust
+* Performance tests will use Locust.
 
-* Tests with Playwright need to use async
+* Tests with Playwright need to use async.
 
-* VScode is prefered as the IDE and some commands or behavior are expecting to use it
+* VScode is preferred as the IDE and some commands or behavior are expected to use it.
 
-* To limit time consuming error, type checking for Python is set at strict and can be changed in the settings by searching for python.analysis.typeCheckingMode 
+* To limit time consuming error, type checking for Python is set at strict and can be changed in the settings by searching for python.analysis.typeCheckingMode.
