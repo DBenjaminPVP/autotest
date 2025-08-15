@@ -17,3 +17,21 @@ jobs:
         run: |
           playwright install --with-deps
           python -m pytest -m training
+
+# This should be used only if the behavior with the githhub actions and the docker on the local machine are different
+# instead of using a container, it uses your Dockerfile to build an image then use this image to run the tests.
+# however building an image every time is allegedly slower.
+
+#jobs:
+#  test-in-docker:
+#    name: 'Build Docker and Run Tests'
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Check out the repo
+#        uses: actions/checkout@v4
+
+#      - name: Build the Docker image
+#        run: docker run --init --ipc=host autotest
+
+#      - name: Run tests inside the Docker container
+#        run: docker run my-test-image

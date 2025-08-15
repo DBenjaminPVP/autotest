@@ -28,6 +28,9 @@ This command is based on the good practices mentioned in `https://playwright.dev
 ### To run the tests without Docker 
 Run the command `pytest -m [markdown wanted like training]` 
 
+### When pushing
+Each push to the main branch starts the github action provided in the `automated_test.yml` file. This file run all the automated tests associated with the training mark  
+
 ## Notes concerning the project 
 
 * All tests will use Python
