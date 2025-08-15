@@ -6,18 +6,6 @@ This is a portfolio used to display automated testing cases.
 
 Benjamin Defays
 
-## Important points 
-
-* All tests will use Python
-
-* Tests with Playwright need to use async
-
-* Automated tests will use Playwright
-
-* Performance tests will use Locust
-
-* To limit time consuming error, type checking is set at strict and can be changed in the settings by searching for python.analysis.typeCheckingMode 
-
 ### websites
 
 * Most of the tests will be based on the test website `https://www.saucedemo.com/`
@@ -34,7 +22,22 @@ Benjamin Defays
 Run the command `docker build -t autotest .`
 
 ### To start the Docker container 
-Run the command `docker run -it --rm autotest`
+Run the command `docker run -it --rm --init --ipc=host autotest`
+This command is based on the good practices mentioned in `https://playwright.dev/docs/docker#recommended-docker-configuration`. Please refer to it when needed.
 
 ### To run the tests without Docker 
 Run the command `pytest -m [markdown wanted like training]` 
+
+## Notes concerning the project 
+
+* All tests will use Python
+
+* Automated tests will use Playwright
+
+* Performance tests will use Locust
+
+* Tests with Playwright need to use async
+
+* VScode is prefered as the IDE and some commands or behavior are expecting to use it
+
+* To limit time consuming error, type checking for Python is set at strict and can be changed in the settings by searching for python.analysis.typeCheckingMode 
